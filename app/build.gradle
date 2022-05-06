@@ -23,7 +23,7 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        buildConfigField("String", "API_KEY", API_KEY)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -43,7 +43,6 @@ android {
 }
 
 dependencies {
-
     //Kotlin Dependencies
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -66,11 +65,11 @@ dependencies {
     implementation group: 'com.google.code.gson', name: 'gson', version: retrofit_version
     implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: retrofit_version
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
 
     //RxKotlin Dependencies
     implementation "io.reactivex.rxjava3:rxkotlin:$rxkotlin_version"
     implementation "io.reactivex.rxjava3:rxandroid:$rxkotlin_version"
-    implementation "android.arch.lifecycle:reactivestreams:1.1.1"
     implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$rxkotlin_version"
 
     //Navigation Dependencies
@@ -80,4 +79,5 @@ dependencies {
     //Lifecycle Dependencies
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
 }
