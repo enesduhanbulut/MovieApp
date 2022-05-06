@@ -3,8 +3,9 @@ package com.duhan.movieapp.feature_movie.data.data_source.network
 import com.duhan.movieapp.BuildConfig
 import com.duhan.movieapp.feature_movie.data.data_source.network.model.APIResponse
 import com.duhan.movieapp.feature_movie.data.data_source.network.model.NowPlayingResult
+import com.duhan.movieapp.feature_movie.data.data_source.network.model.UpcomingResult
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -17,12 +18,12 @@ interface MovieAPIService {
     @GET("movie/now_playing")
     fun getNowPlaying(
         @Query("page") page: Int,
-    ): Observable<APIResponse<NowPlayingResult>>
+    ): Single<APIResponse<NowPlayingResult>>
 
     @GET("movie/upcoming")
     fun getUpcoming(
-        @Query("page") page: Int,
-    ): Observable<List<Result<NowPlayingResult>>>
+        @Query("page") page: Int
+    ): Single<APIResponse<UpcomingResult>>
 
     companion object {
         private const val BASE_URL = "https://api.themoviedb.org/3/"
@@ -44,7 +45,7 @@ interface MovieAPIService {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(
                     RxJava3CallAdapterFactory
-                    .createWithScheduler(Schedulers.io())
+                        .createWithScheduler(Schedulers.io())
                 )
                 .build()
                 .create(MovieAPIService::class.java)

@@ -15,7 +15,7 @@ class NowPlayingResultTest {
     @Test
     fun getNowPlayingTest() {
         val size = movieAPIService.getNowPlaying(1)
-            .blockingFirst().results.size
+            .blockingGet().results.size
         assert(size > 0)
 
 
