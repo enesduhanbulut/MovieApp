@@ -1,11 +1,22 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
-
+apply plugin: 'kotlin-android'
+def ktx_version = '1.7.0'
+def hiltVersion = '2.41'
+def retrofit_version = '2.9.0'
+def lifecycle_version = '2.4.1'
+def rxkotlin_version = "3.0.0"
+def nav_version = "2.4.2"
 android {
     compileSdk 32
 
+    buildFeatures {
+        dataBinding true
+    }
     defaultConfig {
         applicationId "com.duhan.movieapp"
         minSdk 23
@@ -33,11 +44,40 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    //Kotlin Dependencies
+    implementation "androidx.core:core-ktx:$ktx_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //View dependencies
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+
+    //Test Dependencies
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Dependency Injection Dependencies
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+
+    //API Dependencies
+    implementation group: 'com.google.code.gson', name: 'gson', version: retrofit_version
+    implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: retrofit_version
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //RxKotlin Dependencies
+    implementation "io.reactivex.rxjava3:rxkotlin:$rxkotlin_version"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxkotlin_version"
+    implementation "android.arch.lifecycle:reactivestreams:1.1.1"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$rxkotlin_version"
+
+    //Navigation Dependencies
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Lifecycle Dependencies
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 }
