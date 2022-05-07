@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="slider_height">256dp</dimen>
+    <dimen name="slider_width">375dp</dimen>
+    <dimen name="slider_indicator_margin_horizontal">151dp</dimen>
+    <dimen name="slider_indicator_margin_bottom">16dp</dimen>
+    <dimen name="slider_indicator_margin_top">232dp</dimen>
+    <dimen name="slider_title_margin_top">152dp</dimen>
+    <dimen name="slider_title_margin_bottom">80dp</dimen>
+    <dimen name="slider_description_margin_top">184dp</dimen>
+    <dimen name="slider_description_margin_bottom">40dp</dimen>
+    <dimen name="slider_description_text_size">12sp</dimen>
+    <dimen name="slider_description_margin_horizontal">16dp</dimen>
+    <dimen name="slider_title_margin_horizontal">16dp</dimen>
+    <dimen name="slider_title_text_size">20sp</dimen>
+</resources>
