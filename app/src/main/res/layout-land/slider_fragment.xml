@@ -12,13 +12,12 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <com.smarteist.autoimageslider.SliderView
                 android:id="@+id/imageSlider"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/moonrise_kingdom"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -38,36 +37,6 @@
                 app:sliderIndicatorUnselectedColor="@color/slider_indicator_unselected_color"
                 app:sliderScrollTimeInSec="1"
                 app:sliderStartAutoCycle="true" />
-
-            <TextView
-                android:id="@+id/textTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/slider_title_margin_horizontal"
-                android:layout_marginTop="@dimen/slider_title_margin_top"
-                android:layout_marginBottom="@dimen/slider_title_margin_bottom"
-                android:fontFamily="@font/sf_pro_display_bold"
-                android:textColor="@color/white"
-                android:textSize="@dimen/slider_title_text_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="This is title" />
-
-            <TextView
-                android:id="@+id/textDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/slider_description_margin_horizontal"
-                android:layout_marginTop="@dimen/slider_description_margin_top"
-                android:layout_marginBottom="@dimen/slider_description_margin_bottom"
-                android:fontFamily="@font/sf_pro_text_medium"
-                android:textColor="@color/white"
-                android:textSize="@dimen/slider_description_text_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="This is description" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

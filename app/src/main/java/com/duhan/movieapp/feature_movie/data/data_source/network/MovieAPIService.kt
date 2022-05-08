@@ -26,7 +26,6 @@ interface MovieAPIService {
     ): Single<APIResponse<UpcomingResult>>
 
     companion object {
-        private const val BASE_URL = "https://api.themoviedb.org/3/"
 
         fun create(): MovieAPIService {
             val logger = HttpLoggingInterceptor().apply {
@@ -40,7 +39,7 @@ interface MovieAPIService {
                 .build()
 
             return Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BuildConfig.BASEURL + "/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(

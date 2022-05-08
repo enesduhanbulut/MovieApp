@@ -1,76 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".feature_movie.presentation.slider.SliderFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.card.MaterialCardView
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.duhan.movieapp.feature_movie.presentation.slider.SliderViewModel" />
+
+    </data>
+
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:context=".feature_movie.presentation.slider.SliderFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <com.smarteist.autoimageslider.SliderView
-                android:id="@+id/imageSlider"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/moonrise_kingdom"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:sliderAnimationDuration="600"
-                app:sliderAutoCycleDirection="back_and_forth"
-                app:sliderAutoCycleEnabled="true"
-                app:sliderIndicatorAnimationDuration="600"
-                app:sliderIndicatorGravity="center_horizontal|bottom"
-                app:sliderIndicatorMarginBottom="@dimen/slider_indicator_margin_bottom"
-                app:sliderIndicatorMarginLeft="@dimen/slider_indicator_margin_horizontal"
-                app:sliderIndicatorMarginRight="@dimen/slider_indicator_margin_horizontal"
-                app:sliderIndicatorMarginTop="@dimen/slider_indicator_margin_top"
-                app:sliderIndicatorOrientation="horizontal"
-                app:sliderIndicatorPadding="2dp"
-                app:sliderIndicatorRadius="1.5dp"
-                app:sliderIndicatorSelectedColor="@color/slider_indicator_selected_color"
-                app:sliderIndicatorUnselectedColor="@color/slider_indicator_unselected_color"
-                app:sliderScrollTimeInSec="1"
-                app:sliderStartAutoCycle="true" />
-
-            <TextView
-                android:id="@+id/textTitle"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/slider_title_margin_horizontal"
-                android:layout_marginTop="@dimen/slider_title_margin_top"
-                android:layout_marginBottom="@dimen/slider_title_margin_bottom"
-                android:fontFamily="@font/sf_pro_display_bold"
-                android:textColor="@color/white"
-                android:textSize="@dimen/slider_title_text_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="This is title" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/slider_description_margin_horizontal"
-                android:layout_marginTop="@dimen/slider_description_margin_top"
-                android:layout_marginBottom="@dimen/slider_description_margin_bottom"
-                android:fontFamily="@font/sf_pro_text_medium"
-                android:textColor="@color/white"
-                android:textSize="@dimen/slider_description_text_size"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="This is description" />
+                <com.smarteist.autoimageslider.SliderView
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/slider_height"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:sliderAnimationDuration="1600"
+                    app:sliderAutoCycleDirection="back_and_forth"
+                    app:sliderAutoCycleEnabled="true"
+                    app:sliderIndicatorAnimationDuration="1600"
+                    app:sliderIndicatorGravity="center_horizontal|bottom"
+                    app:sliderIndicatorMarginBottom="@dimen/slider_indicator_margin_bottom"
+                    app:sliderIndicatorMarginLeft="@dimen/slider_indicator_margin_horizontal"
+                    app:sliderIndicatorMarginRight="@dimen/slider_indicator_margin_horizontal"
+                    app:sliderIndicatorMarginTop="@dimen/slider_indicator_margin_top"
+                    app:sliderIndicatorOrientation="horizontal"
+                    app:sliderIndicatorPadding="2dp"
+                    app:sliderIndicatorRadius="1.5dp"
+                    app:sliderIndicatorSelectedColor="@color/slider_indicator_selected_color"
+                    app:sliderIndicatorUnselectedColor="@color/slider_indicator_unselected_color" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-    </com.google.android.material.card.MaterialCardView>
-
-</FrameLayout>
+    </FrameLayout>
+</layout>
