@@ -7,7 +7,14 @@
 
         <variable
             name="item"
-            type="com.duhan.movieapp.feature_movie.presentation.list.ListItem" />
+            type="com.duhan.movieapp.feature_movie.presentation.MovieItem" />
+
+        <variable
+            name="itemOnClick"
+            type="com.duhan.movieapp.feature_movie.presentation.list.ItemClickListener" />
+
+        <import type="com.duhan.movieapp.feature_movie.presentation.BindingUtilsKt" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +30,6 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imageListItem"
-                app:imageUrl="@{item.imageUrl}"
                 android:layout_width="@dimen/list_item_image_size"
                 android:layout_height="@dimen/list_item_image_size"
                 android:layout_marginVertical="@dimen/list_item_margin_vertical"
@@ -31,6 +37,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/moonrise_kingdom"
+                app:imageUrl="@{item.imageUrl}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -97,6 +104,7 @@
             android:layout_width="@dimen/list_item_button_size"
             android:layout_height="@dimen/list_item_button_size"
             android:layout_marginEnd="@dimen/ist_item_button_margin_end"
+            android:onClick="@{() ->  itemOnClick.onClicked(item)}"
             android:src="@drawable/ic_arrow_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

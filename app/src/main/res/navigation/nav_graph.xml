@@ -9,5 +9,19 @@
         android:id="@+id/mainFragment"
         android:name="com.duhan.movieapp.feature_movie.presentation.main.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        tools:layout="@layout/detail_fragment"
+        android:name="com.duhan.movieapp.feature_movie.presentation.detail.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="movieItem"
+            app:argType="com.duhan.movieapp.feature_movie.presentation.MovieItem" />
+    </fragment>
 </navigation>

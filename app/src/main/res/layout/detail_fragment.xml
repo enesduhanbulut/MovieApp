@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.duhan.movieapp.feature_movie.presentation.MovieItem" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".feature_movie.presentation.detail.DetailFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/slider_height"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/moonrise_kingdom"
+                app:imageUrl="@{item.imageUrl}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageImdbLogo"
+                android:layout_width="49dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/imdb"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageSlider" />
+
+            <ImageView
+                android:id="@+id/imageRateIcon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/rate_icon"
+                app:layout_constraintBottom_toBottomOf="@id/imageImdbLogo"
+                app:layout_constraintStart_toEndOf="@id/imageImdbLogo"
+                app:layout_constraintTop_toTopOf="@id/imageImdbLogo" />
+
+            <TextView
+                android:id="@+id/textRate"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@{item.rate}"
+                android:textColor="#2B2D42"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/imageImdbLogo"
+                app:layout_constraintStart_toEndOf="@id/imageRateIcon"
+                app:layout_constraintTop_toTopOf="@id/imageImdbLogo"
+                tools:text="7.8" />
+
+            <TextView
+                android:id="@+id/textTen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@string/_10"
+                android:textColor="#ADB5BD"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/imageImdbLogo"
+                app:layout_constraintStart_toEndOf="@id/textRate"
+                app:layout_constraintTop_toTopOf="@id/imageImdbLogo" />
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/sf_pro_text_medium"
+                android:text="@{item.releaseDate}"
+                android:textColor="#2B2D42"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/imageImdbLogo"
+                app:layout_constraintStart_toEndOf="@id/textTen"
+                app:layout_constraintTop_toTopOf="@id/imageImdbLogo"
+                tools:text="20-12-2022" />
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="@{item.title}"
+                android:textColor="#2B2D42"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageImdbLogo"
+                tools:text="This is title" />
+
+            <TextView
+                android:id="@+id/textBody"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:text="@{item.description}"
+                android:textColor="#2B2D42"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitle"
+                tools:text="This is body" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>
