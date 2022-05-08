@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.duhan.movieapp.feature_movie.presentation.list.ListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutListItemInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageListItem"
+                app:imageUrl="@{item.imageUrl}"
+                android:layout_width="@dimen/list_item_image_size"
+                android:layout_height="@dimen/list_item_image_size"
+                android:layout_marginVertical="@dimen/list_item_margin_vertical"
+                android:layout_marginStart="@dimen/list_item_margin_start"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/moonrise_kingdom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize20Percent"
+                app:strokeColor="@android:color/darker_gray" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="@dimen/list_item_text_width"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/list_item_text_margin_start"
+                android:layout_marginTop="@dimen/list_item_text_margin_top"
+                android:layout_marginEnd="@dimen/list_item_text_margin_end"
+                android:layout_marginBottom="@dimen/list_item_text_margin_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageListItem"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/listItemTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_title_height"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:text="@{item.title}"
+                    android:textColor="#2B2D42"
+                    android:textSize="@dimen/list_item_title_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="This is a title" />
+
+                <TextView
+                    android:id="@+id/listItemDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_item_description_height"
+                    android:layout_marginTop="@dimen/list_item_description_margin_top"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:maxLines="2"
+                    android:text="@{item.description}"
+                    android:textColor="#8D99AE"
+                    android:textSize="@dimen/list_item_description_text_size"
+                    app:layout_constraintTop_toBottomOf="@id/listItemTitle"
+                    tools:text="this is a description" />
+
+                <TextView
+                    android:id="@+id/listItemDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/list_item_date_margin_top"
+                    android:fontFamily="@font/sf_pro_text_medium"
+                    android:text="@{item.releaseDate}"
+                    android:textColor="#8D99AE"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/listItemDescription"
+                    tools:text="this is date" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:layout_width="@dimen/list_item_button_size"
+            android:layout_height="@dimen/list_item_button_size"
+            android:layout_marginEnd="@dimen/ist_item_button_margin_end"
+            android:src="@drawable/ic_arrow_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/layoutListItemInfo"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

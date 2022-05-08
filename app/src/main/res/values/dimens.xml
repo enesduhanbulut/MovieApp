@@ -13,4 +13,20 @@
     <dimen name="slider_description_margin_horizontal">16dp</dimen>
     <dimen name="slider_title_margin_horizontal">16dp</dimen>
     <dimen name="slider_title_text_size">20sp</dimen>
+    <dimen name="list_item_image_size">104dp</dimen>
+    <dimen name="list_item_margin_vertical">16dp</dimen>
+    <dimen name="list_item_margin_start">8dp</dimen>
+    <dimen name="list_item_text_width">203dp</dimen>
+    <dimen name="list_item_text_margin_start">8dp</dimen>
+    <dimen name="list_item_text_margin_top">24dp</dimen>
+    <dimen name="list_item_text_margin_end">19dp</dimen>
+    <dimen name="list_item_text_margin_bottom">16dp</dimen>
+    <dimen name="list_item_title_height">24dp</dimen>
+    <dimen name="list_item_title_text_size">15sp</dimen>
+    <dimen name="list_item_description_height">36dp</dimen>
+    <dimen name="list_item_description_margin_top">8dp</dimen>
+    <dimen name="list_item_description_text_size">13sp</dimen>
+    <dimen name="list_item_date_margin_top">16dp</dimen>
+    <dimen name="list_item_button_size">12dp</dimen>
+    <dimen name="ist_item_button_margin_end">19dp</dimen>
 </resources>

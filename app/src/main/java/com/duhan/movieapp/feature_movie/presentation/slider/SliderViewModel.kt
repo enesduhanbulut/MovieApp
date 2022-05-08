@@ -15,7 +15,7 @@ class SliderViewModel @Inject constructor(private val nowPlayingUseCase: NowPlay
     var list = mutableListOf<SliderItem>()
     private val compositeDisposable = CompositeDisposable()
     val items: LiveData<List<SliderItem>> = sliderItems
-    private var page = 0;
+    private var page = 0
 
     fun getSliderItems() {
         compositeDisposable.add(nowPlayingUseCase.execute(++page)

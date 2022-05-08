@@ -8,6 +8,7 @@ import com.duhan.movieapp.feature_movie.data.data_source.network.MovieAPIService
 import com.duhan.movieapp.feature_movie.data.data_source.network.model.NowPlayingResult
 import com.duhan.movieapp.feature_movie.data.data_source.network.model.UpcomingResult
 import com.duhan.movieapp.feature_movie.data.domain.PagingSources
+import com.duhan.movieapp.feature_movie.presentation.list.ListItem
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Single
 
@@ -20,7 +21,7 @@ class MovieRepositoryImpl(var pagingSources: PagingSources, var movieAPIService:
             .map { it.results }
     }
 
-    override fun getUpcoming(): Flowable<PagingData<UpcomingResult>> {
+    override fun getUpcoming(): Flowable<PagingData<ListItem>> {
         return Pager(pagingConfig) {
             pagingSources.upcomingPagingSource
         }.flowable

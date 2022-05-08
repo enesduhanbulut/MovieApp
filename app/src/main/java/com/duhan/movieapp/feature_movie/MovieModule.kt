@@ -6,6 +6,7 @@ import com.duhan.movieapp.feature_movie.data.domain.UpcomingPagingSource
 import com.duhan.movieapp.feature_movie.domain.repository.MovieRepository
 import com.duhan.movieapp.feature_movie.domain.repository.MovieRepositoryImpl
 import com.duhan.movieapp.feature_movie.domain.use_case.NowPlayingUseCase
+import com.duhan.movieapp.feature_movie.domain.use_case.UpcomingUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +21,6 @@ class MovieModule {
         return UpcomingPagingSource(movieAPIService)
     }
 
-
     @Provides
     fun providePagingSources(
         upcomingPagingSource: UpcomingPagingSource
@@ -29,7 +29,10 @@ class MovieModule {
     }
 
     @Provides
-    fun provideMovieRepository(pagingSources: PagingSources, movieAPIService: MovieAPIService): MovieRepository {
+    fun provideMovieRepository(
+        pagingSources: PagingSources,
+        movieAPIService: MovieAPIService
+    ): MovieRepository {
         return MovieRepositoryImpl(pagingSources, movieAPIService)
     }
 
@@ -38,4 +41,8 @@ class MovieModule {
         return NowPlayingUseCase(movieRepository)
     }
 
+    @Provides
+    fun provideUpcomingUseCase(movieRepository: MovieRepository): UpcomingUseCase {
+        return UpcomingUseCase(movieRepository)
+    }
 }
